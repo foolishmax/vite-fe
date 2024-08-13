@@ -14,7 +14,7 @@ function App() {
   // console.log(NETWORK_ERROR_MSG);
 
   return (
-    <div className="app">
+    <div className="app flex items-center flex-col">
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
