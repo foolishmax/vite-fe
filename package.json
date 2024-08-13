@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "format": "prettier --write '**/*.{js,ts,tsx,json,md,html}'",
-    "lint": "eslint .",
-    "lint:style": "stylelint '**/*.{css,less,scss}' --cache --fix",
+    "build:dev": "tsc -b && vite build --mode development",
+    "build:pro": "tsc -b && vite build --mode production",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --write '**/*.{js,ts,tsx,json,md,html}'",
+    "lint:stylelint": "stylelint '**/*.{css,less,scss}' --cache --fix",
     "preview": "vite preview",
     "prepare": "husky install"
   },
@@ -28,6 +30,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "code-inspector-plugin": "^0.15.2",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
@@ -44,6 +47,7 @@
     "tailwindcss": "^3.4.9",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0",
+    "unplugin-auto-import": "^0.18.2",
     "vite": "^5.4.0",
     "vite-plugin-checker": "^0.7.2"
   },
@@ -57,6 +61,6 @@
   },
   "workspaces": [
     "packages/*",
-    "bussiness/*"
+    "business/*"
   ]
 }

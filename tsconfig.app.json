@@ -25,11 +25,5 @@
       "@/*": ["business/*"]
     }
   },
-  "include": [
-    "src",
-    "business/app/main.tsx",
-    "business/app/vite-env.d.ts",
-    "business/app/store",
-    "business/app/App.tsx"
-  ]
+  "exclude": ["node_modules"]
 }

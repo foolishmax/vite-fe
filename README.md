@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# vite-fe 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀🚀🚀 vite-fe，基于 React18、React-Router v6、zustand v4、typeScript5、tailwindcss3.4、vite5、使用 Prettier 统一格式化代码，集成 Eslint、Stylelint 代码校验规范、使用 husky、lint-staged、commitlint、commitizen 规范提交信息、pnpm workspace、源码定位等功能开源的一套react模版框架。
 
-Currently, two official plugins are available:
+### 安装使用步骤 📑
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Clone：**
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```text
+# GitHub
+git clone https://github.com/foolishmax/vite-fe.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Install：**
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+```text
+pnpm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+- **Run：**
+
+```text
+pnpm dev
+```
+
+- **Build：**
+
+```text
+# 开发环境
+pnpm build:dev
+
+# 生产环境
+pnpm build:pro
+```
+
+- **Lint：**
+
+```text
+# eslint 检测代码
+pnpm lint:eslint
+
+# prettier 格式化代码
+pnpm lint:prettier
+
+# stylelint 格式化样式
+pnpm lint:stylelint
 ```

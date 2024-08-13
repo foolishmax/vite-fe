@@ -1,5 +1,7 @@
 import react from "@vitejs/plugin-react";
+import { codeInspectorPlugin } from "code-inspector-plugin";
 import path from "path";
+import AutoImport from "unplugin-auto-import/vite";
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
 
@@ -14,6 +16,13 @@ export default () => {
         typescript: {
           buildMode: true,
         },
+      }),
+      codeInspectorPlugin({
+        bundler: "vite",
+      }),
+      AutoImport({
+        imports: ["react", "react-router-dom"],
+        dts: true,
       }),
     ],
     resolve: {
