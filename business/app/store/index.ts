@@ -7,7 +7,8 @@ interface Store {
 }
 
 export const useStore = create<Store>((set) => ({
-  username: 'foolishmax',
+  username: "foolishmax",
   age: 18,
-  onUserNamgeChange: (name) => set((state) => ({username: state.username + name}))
-}))
+  onUserNamgeChange: (name) =>
+    set((state) => ({ username: state.username + name })),
+}));
