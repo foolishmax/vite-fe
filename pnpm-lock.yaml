@@ -119,9 +119,6 @@ importers:
       '@pkg/constant':
         specifier: workspace:^
         version: link:../../packages/constant
-      vite:
-        specifier: ^5.4.0
-        version: 5.4.0(@types/node@22.2.0)(less@4.2.0)
 
   business/router:
     dependencies:

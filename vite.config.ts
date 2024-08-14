@@ -3,11 +3,10 @@ import { ConfigEnv, defineConfig, loadEnv } from "vite";
 import {
   createViteProxy,
   getServiceEnvConfig,
+  ImportMetaEnv,
   setupVitePlugins,
-} from "./packages/vite";
-import { ImportMetaEnv } from "./packages/vite/type";
+} from "./scripts";
 
-// https://vitejs.dev/config/
 export default (ConfigEnv: ConfigEnv) => {
   const viteEnv = loadEnv(
     ConfigEnv.mode,

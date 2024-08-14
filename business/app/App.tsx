@@ -13,7 +13,6 @@ function App() {
   const navigate = useNavigate();
   console.log(NETWORK_ERROR_MSG);
 
-
   const goAboutPage = () => {
     navigate("/about");
   };
