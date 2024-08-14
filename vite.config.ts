@@ -1,34 +1,32 @@
-import react from "@vitejs/plugin-react";
-import { codeInspectorPlugin } from "code-inspector-plugin";
 import path from "path";
-import AutoImport from "unplugin-auto-import/vite";
-import { defineConfig } from "vite";
-import checker from "vite-plugin-checker";
+import { ConfigEnv, defineConfig, loadEnv } from "vite";
+import {
+  createViteProxy,
+  getServiceEnvConfig,
+  setupVitePlugins,
+} from "./packages/vite";
+import { ImportMetaEnv } from "./packages/vite/type";
 
 // https://vitejs.dev/config/
-export default () => {
-  // console.log(config);
+export default (ConfigEnv: ConfigEnv) => {
+  const viteEnv = loadEnv(
+    ConfigEnv.mode,
+    process.cwd(),
+  ) as unknown as ImportMetaEnv;
+  const isProxy = viteEnv.VITE_HTTP_PROXY === "Y";
+  const envConfig = getServiceEnvConfig(viteEnv);
 
   return defineConfig({
-    plugins: [
-      react(),
-      checker({
-        typescript: {
-          buildMode: true,
-        },
-      }),
-      codeInspectorPlugin({
-        bundler: "vite",
-      }),
-      AutoImport({
-        imports: ["react", "react-router-dom"],
-        dts: true,
-      }),
-    ],
+    plugins: setupVitePlugins(viteEnv),
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "business"),
       },
+    },
+    server: {
+      host: "0.0.0.0",
+      port: 5173,
+      proxy: createViteProxy(isProxy, envConfig),
     },
     css: {
       modules: {

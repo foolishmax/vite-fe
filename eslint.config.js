@@ -18,6 +18,7 @@ export default tseslint.config({
     "react-refresh": reactRefresh,
   },
   rules: {
-    "no-console": 2,
+    "no-console": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 });
