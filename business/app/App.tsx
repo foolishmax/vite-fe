@@ -1,5 +1,5 @@
 import { useStore } from "@/app/store";
-import { NETWORK_ERROR_MSG, aaa } from "@pkg/constant";
+import { NETWORK_ERROR_MSG } from "@pkg/constant";
 import { useState } from "react";
 import "./app.css";
 import "./app.less";
@@ -13,7 +13,6 @@ function App() {
   const navigate = useNavigate();
   console.log(NETWORK_ERROR_MSG);
 
-  console.log(aaa);
 
   const goAboutPage = () => {
     navigate("/about");
