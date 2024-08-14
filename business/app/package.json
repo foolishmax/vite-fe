@@ -1,10 +1,12 @@
 {
-  "name": "@business/app",
+  "name": "app",
   "version": "1.0.0",
-  "license": "MIT",
-  "private": true,
-  "main": "App.tsx",
-  "dependencies": {
-    "@pkg/constant": "workspace:^"
-  }
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
